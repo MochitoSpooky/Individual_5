@@ -1,0 +1,25 @@
+{% extends 'principal/base.html' %}
+
+{% block content %}
+  <div class="profile-container">
+    <h1 class="profile-title">Perfil de usuario</h1>
+    
+    <h2>Información del perfil</h2>
+    <table class="profile-table">
+      <tr>
+        <th>Campo</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>Nombre de usuario:</td>
+        <td>{{ user.username }}</td>
+      </tr>
+      <tr>
+        <td>Correo electrónico:</td>
+        <td>{{ user.email }}</td>
+      </tr>
+      <!-- Otros campos del perfil -->
+    </table>
+  </div>
+  
+{% endblock %}
