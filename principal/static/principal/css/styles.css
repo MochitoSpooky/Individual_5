@@ -1,0 +1,78 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body {
+    background-image: url("/static/principal/img/fondo2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*configuarion de tabla de usuarios */
+.table-users {
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo claro semitransparente */
+}
+
+.custom-title {
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.container {
+    flex: 1;
+}
+/*configuracion del saludo */
+.landing-header {
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+    text-shadow: 3px 3px 4px #262441; /* Color de margen en la letra */
+}
+
+.landing-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.landing-header p {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* Configuración del carrusel */
+.carousel-container {
+    width: 100%;
+    max-width: 800px; /* Ancho máximo deseado del carrusel */
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.267) !important; /* Color de fondo semi transparente del carrusel */
+    border-radius: 5px; /* Radio de los bordes redondeados */
+}
+
+.carousel-container .carousel-item img {
+    object-fit: contain;
+    width: 100%;
+    height: 450px; /* Altura deseada de las imágenes */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    color: #000;
+    font-size: 2rem;
+    opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: #f0f0f0;
+}
+
+.carousel-container {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    opacity: 1;
+}
