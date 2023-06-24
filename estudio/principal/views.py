@@ -65,3 +65,4 @@ from django.shortcuts import render
 def profile_view(request):
     user = request.user  # Usuario autenticado
     return render(request, 'principal/perfil.html', {'user': user})
+
