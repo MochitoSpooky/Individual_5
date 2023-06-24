@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect
-from .models import Usuario
+from principal.models import Usuario
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UsuarioForm
 from django import forms
+from django.contrib.auth.decorators import login_required
+
 
 
 def base(request):
     return render(request, 'principal/base.html')
+
+@login_required(login_url='login')
 def lista_usuarios(request):
     usuarios = User.objects.all()
     return render(request, 'principal/lista_usuarios.html', {'usuarios': usuarios})
@@ -21,7 +25,7 @@ def crear_usuario(request):
             nombre = form.cleaned_data['nombre']
             apellido = form.cleaned_data['apellido']
             email = form.cleaned_data['email']
-            usuario = form.cleaned_data['usuario']  # Obtener el nombre de usuario
+            usuario = form.cleaned_data['usuario'] 
             contraseña = form.cleaned_data['contraseña']
             
             
@@ -47,14 +51,14 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/perfil/')  # Redirecciona a la página 'perfil'
+            return redirect('perfil')
         else:
-            messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
+            messages.error(request, 'Usuario o contraseña incorrectos.')
     
     return render(request, 'principal/login.html')
 def logout_view(request):
     logout(request)
-    return redirect('principal/base.html')# Redirecciona a la página principal después del cierre de sesión
+    return redirect('base')# Redirecciona a la página principal después del cierre de sesión
 
 from django.shortcuts import render
 
