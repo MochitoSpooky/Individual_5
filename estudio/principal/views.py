@@ -47,7 +47,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('perfil')  # Redirecciona a la página 'perfil'
+            return redirect('/perfil/')  # Redirecciona a la página 'perfil'
         else:
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
     

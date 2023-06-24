@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from principal.views import base, lista_usuarios, crear_usuario
 from django.contrib.auth import views as auth_views
+from principal import views
 
 urlpatterns = [
     path('', base, name='base'),  # Ruta para la página base.html (página principal)
@@ -27,5 +28,7 @@ urlpatterns = [
     path('crear-usuario/', crear_usuario, name='crear_usuario'),
     path('login/', auth_views.LoginView.as_view(template_name='principal/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='principal/base.html'), name='logout'),
+    path('accounts/profile/', views.profile_view, name='perfil'),
+
 ]
 
